@@ -1,0 +1,28 @@
+version: '3.7'
+
+services: 
+    apache:
+        build:
+           context: ./php-httpd
+        restart: always
+        volumes: 
+            - ./blogseite:/var/www/html/
+        ports:
+            - 8080:80
+ 
+    db:
+        image: postgres:12.2-alpine
+        restart: always
+        volumes: 
+            - ./db-data:/var/lib/postgresql/data
+        ports: 
+            - 5432:5432
+        environment:
+            POSTGRES_PASSWORD: 123
+
+    # to connect ot database via terminal:
+    # sudo docker exec -it <container-name> psql -U postgres
+    # docker inspect <container name of db> gives the ip: 172.26.0.2 
+
+volumes: 
+    db-data:
