@@ -8,7 +8,7 @@
         $mobile_no = $_POST['mobile']; // Telefon-Wert aus der HTML-Form in Variable gespeichert
         $msg = $_POST['message']; // Nachrichten-"Wert" aus der HTML-Form in Variable gespeichert
          
-        $to = "eduard.f1991@googlemail.com"; // Email-Adresse wo die Mails von der Webseite hingeschickt werden
+        $to = ""; // Email-Adresse wo die Mails von der Webseite hingeschickt werden
         $subject = "'$name' hat eine Nachricht geschickt."; // Das steht in der Email als Titel
          
         // HTML-Formatierung für die Mail
